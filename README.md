@@ -1,200 +1,200 @@
-# Text Analysis Web Application
+# Ứng Dụng Phân Tích Văn Bản
 
-A comprehensive web application for text analysis using Natural Language Processing (NLP) techniques. This application demonstrates the classic NLP pipeline: **Tokenization → POS Tagging → Named Entity Recognition**.
+Ứng dụng web toàn diện để phân tích văn bản sử dụng các kỹ thuật Xử lý Ngôn ngữ Tự nhiên (NLP). Ứng dụng này minh họa pipeline NLP cổ điển: **Tách từ → Gắn nhãn từ loại → Nhận dạng thực thể có tên**.
 
-## 🚀 Features
+## 🚀 Tính Năng
 
-- **Tokenization**: Break text into individual tokens (words, punctuation, etc.)
-- **Part-of-Speech (POS) Tagging**: Identify grammatical categories of each token
-- **Named Entity Recognition (NER)**: Extract and classify named entities (people, organizations, locations, etc.)
-- **Interactive Visualizations**: Charts and graphs for better understanding
-- **Color-coded Entity Highlighting**: Visual representation of different entity types
-- **Comprehensive Statistics**: Detailed analysis summary with metrics
+- **Tách từ (Tokenization)**: Chia văn bản thành các từ đơn lẻ (từ, dấu câu, v.v.)
+- **Gắn nhãn từ loại (POS Tagging)**: Xác định các loại từ ngữ pháp của mỗi token
+- **Nhận dạng thực thể có tên (NER)**: Trích xuất và phân loại các thực thể có tên (người, tổ chức, địa điểm, v.v.)
+- **Trực quan hóa tương tác**: Biểu đồ và đồ thị để hiểu rõ hơn
+- **Tô màu thực thể**: Biểu diễn trực quan các loại thực thể khác nhau
+- **Thống kê toàn diện**: Tóm tắt phân tích chi tiết với các chỉ số
 
-## 🛠️ Technologies Used
+## 🛠️ Công Nghệ Sử Dụng
 
-- **spaCy**: Advanced NLP library for tokenization, POS tagging, and NER
-- **Streamlit**: Modern web framework for creating interactive data applications
-- **Pandas**: Data manipulation and analysis
-- **Plotly**: Interactive visualizations and charts
+- **spaCy**: Thư viện NLP tiên tiến cho tách từ, gắn nhãn từ loại và NER
+- **Streamlit**: Framework web hiện đại để tạo ứng dụng dữ liệu tương tác
+- **Pandas**: Thao tác và phân tích dữ liệu
+- **Plotly**: Trực quan hóa tương tác và biểu đồ
 
-## 📋 Prerequisites
+## 📋 Yêu Cầu Hệ Thống
 
-- Python 3.7 or higher
-- pip (Python package installer)
+- Python 3.7 trở lên
+- pip (trình cài đặt gói Python)
 
-## 🔧 Installation
+## 🔧 Cài Đặt
 
-1. **Clone or download this project**
+1. **Clone hoặc tải xuống dự án này**
    ```bash
    cd /path/to/your/project
    ```
 
-2. **Install Python dependencies**
+2. **Cài đặt các phụ thuộc Python**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Download spaCy English model**
+3. **Tải xuống mô hình tiếng Anh của spaCy**
    ```bash
    python -m spacy download en_core_web_sm
    ```
 
-## 🚀 Running the Application
+## 🚀 Chạy Ứng Dụng
 
-1. **Start the Streamlit application**
+1. **Khởi động ứng dụng Streamlit**
    ```bash
    streamlit run app.py
    ```
 
-2. **Open your web browser**
-   - The application will automatically open at `http://localhost:8501`
-   - If it doesn't open automatically, manually navigate to the URL shown in the terminal
+2. **Mở trình duyệt web**
+   - Ứng dụng sẽ tự động mở tại `http://localhost:8501`
+   - Nếu không tự động mở, hãy điều hướng thủ công đến URL hiển thị trong terminal
 
-## 📖 How to Use
+## 📖 Cách Sử Dụng
 
-### 1. Input Text
-- **Option A**: Type your own text in the text area on the left sidebar
-- **Option B**: Select one of the provided sample texts from the dropdown menu
+### 1. Nhập Văn Bản
+- **Tùy chọn A**: Nhập văn bản của bạn vào ô nhập liệu ở sidebar bên trái
+- **Tùy chọn B**: Chọn một trong các văn bản mẫu có sẵn từ menu dropdown
 
-### 2. Analyze Text
-- Click the **"🔍 Analyze Text"** button to process your input
+### 2. Phân Tích Văn Bản
+- Nhấn nút **"🔍 Phân Tích Văn Bản"** để xử lý văn bản đầu vào
 
-### 3. View Results
-The application provides four main tabs:
+### 3. Xem Kết Quả
+Ứng dụng cung cấp bốn tab chính:
 
-#### 🔤 Tokens Tab
-- Displays all individual tokens extracted from the text
-- Shows token properties (whitespace, alphabetic, digit, punctuation)
-- Provides token statistics (total tokens, words, numbers, punctuation)
+#### 🔤 Tab Tách Từ
+- Hiển thị tất cả các token riêng lẻ được trích xuất từ văn bản
+- Hiển thị thuộc tính token (khoảng trắng, chữ cái, số, dấu câu)
+- Cung cấp thống kê token (tổng token, từ, số, dấu câu)
 
-#### 🏷️ POS Tags Tab
-- Shows Part-of-Speech tags for each token
-- Displays both coarse-grained and fine-grained POS tags
-- Includes lemmatization (root form of words)
-- Shows POS tag distribution chart
+#### 🏷️ Tab Gắn Nhãn Từ Loại
+- Hiển thị nhãn Part-of-Speech cho mỗi token
+- Hiển thị cả nhãn thô và nhãn chi tiết
+- Bao gồm lemmatization (dạng gốc của từ)
+- Hiển thị biểu đồ phân bố nhãn POS
 
-#### 👥 Named Entities Tab
-- Lists all named entities found in the text
-- Categorizes entities by type (PERSON, ORG, GPE, etc.)
-- Provides entity type distribution pie chart
-- **Highlights entities in the original text with different colors**
+#### 👥 Tab Nhận Dạng Thực Thể
+- Liệt kê tất cả các thực thể có tên được tìm thấy trong văn bản
+- Phân loại thực thể theo loại (PERSON, ORG, GPE, v.v.)
+- Cung cấp biểu đồ tròn phân bố loại thực thể
+- **Tô màu các thực thể trong văn bản gốc với các màu khác nhau**
 
-#### 📊 Summary Tab
-- Overall text statistics (characters, words, sentences)
-- Entity summary metrics
-- Most frequent words chart
-- Average word length and other insights
+#### 📊 Tab Tổng Kết
+- Thống kê tổng quan về văn bản (ký tự, từ, câu)
+- Các chỉ số tóm tắt thực thể
+- Biểu đồ từ xuất hiện nhiều nhất
+- Độ dài từ trung bình và các thông tin khác
 
-## 🎨 Entity Color Coding
+## 🎨 Mã Màu Thực Thể
 
-The application uses different colors to highlight various entity types:
+Ứng dụng sử dụng các màu khác nhau để tô màu các loại thực thể:
 
-- **PERSON** (People): Red
-- **ORG** (Organizations): Teal
-- **GPE** (Geopolitical entities): Blue
-- **LOC** (Locations): Green
-- **DATE**: Yellow
-- **TIME**: Plum
-- **MONEY**: Mint
-- **PERCENT**: Light Yellow
-- And many more...
+- **PERSON** (Người): Đỏ
+- **ORG** (Tổ chức): Xanh ngọc
+- **GPE** (Thực thể địa chính trị): Xanh dương
+- **LOC** (Địa điểm): Xanh lá
+- **DATE** (Ngày tháng): Vàng
+- **TIME** (Thời gian): Tím
+- **MONEY** (Tiền tệ): Xanh bạc hà
+- **PERCENT** (Phần trăm): Vàng nhạt
+- Và nhiều loại khác...
 
-## 📊 Sample Texts
+## 📊 Văn Bản Mẫu
 
-The application includes three sample texts to get you started:
+Ứng dụng bao gồm ba văn bản mẫu để bạn bắt đầu:
 
-1. **News Article**: About Apple Inc. and Tim Cook
-2. **Scientific Text**: About research from MIT
-3. **Business Report**: About Microsoft's earnings
+1. **Bài báo tin tức**: Về Apple Inc. và Tim Cook
+2. **Văn bản khoa học**: Về nghiên cứu từ MIT
+3. **Báo cáo kinh doanh**: Về thu nhập của Microsoft
 
-## 🔍 Understanding the Results
+## 🔍 Hiểu Kết Quả
 
-### Tokenization
-- **Token**: Individual units of text (words, punctuation, spaces)
-- **Whitespace**: Whether the token is followed by whitespace
-- **Is Alpha**: Whether the token contains only alphabetic characters
-- **Is Digit**: Whether the token contains only digits
-- **Is Punctuation**: Whether the token is punctuation
+### Tách Từ
+- **Token**: Các đơn vị riêng lẻ của văn bản (từ, dấu câu, khoảng trắng)
+- **Khoảng trắng**: Token có theo sau bởi khoảng trắng hay không
+- **Chữ cái**: Token có chứa chỉ các ký tự chữ cái hay không
+- **Số**: Token có chứa chỉ các chữ số hay không
+- **Dấu câu**: Token có phải là dấu câu hay không
 
-### POS Tagging
-- **POS Tag**: Coarse-grained grammatical category (NOUN, VERB, ADJ, etc.)
-- **Fine-grained Tag**: More specific grammatical information
-- **Lemma**: Root form of the word (e.g., "running" → "run")
-- **Stop Word**: Common words that are often filtered out (the, a, an, etc.)
+### Gắn Nhãn Từ Loại
+- **Nhãn POS**: Loại ngữ pháp thô (NOUN, VERB, ADJ, v.v.)
+- **Nhãn chi tiết**: Thông tin ngữ pháp cụ thể hơn
+- **Lemma**: Dạng gốc của từ (ví dụ: "running" → "run")
+- **Từ dừng**: Các từ phổ biến thường được lọc bỏ (the, a, an, v.v.)
 
-### Named Entity Recognition
-- **PERSON**: Names of people
-- **ORG**: Organizations, companies, institutions
-- **GPE**: Countries, cities, states (geopolitical entities)
-- **LOC**: Non-geopolitical locations (mountains, bodies of water)
-- **DATE**: Absolute or relative dates
-- **TIME**: Times smaller than a day
-- **MONEY**: Monetary values
-- **PERCENT**: Percentages
-- **CARDINAL**: Numerals that don't fall into other categories
-- **ORDINAL**: "first", "second", etc.
+### Nhận Dạng Thực Thể Có Tên
+- **PERSON**: Tên người
+- **ORG**: Tổ chức, công ty, cơ quan
+- **GPE**: Quốc gia, thành phố, bang (thực thể địa chính trị)
+- **LOC**: Địa điểm phi địa chính trị (núi, sông, hồ)
+- **DATE**: Ngày tháng tuyệt đối hoặc tương đối
+- **TIME**: Thời gian nhỏ hơn một ngày
+- **MONEY**: Giá trị tiền tệ
+- **PERCENT**: Phần trăm
+- **CARDINAL**: Số đếm không thuộc các loại khác
+- **ORDINAL**: "first", "second", v.v.
 
-## 🐛 Troubleshooting
+## 🐛 Khắc Phục Sự Cố
 
-### Common Issues
+### Các Vấn Đề Thường Gặp
 
-1. **"spaCy English model not found" error**
+1. **Lỗi "spaCy English model not found"**
    ```bash
    python -m spacy download en_core_web_sm
    ```
 
-2. **Module not found errors**
+2. **Lỗi không tìm thấy module**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Port already in use**
-   - Streamlit will automatically find an available port
-   - Or specify a different port: `streamlit run app.py --server.port 8502`
+3. **Cổng đã được sử dụng**
+   - Streamlit sẽ tự động tìm cổng khả dụng
+   - Hoặc chỉ định cổng khác: `streamlit run app.py --server.port 8502`
 
-## 📁 Project Structure
+## 📁 Cấu Trúc Dự Án
 
 ```
 lesson_2/
-├── app.py              # Main Streamlit application
-├── requirements.txt    # Python dependencies
-└── README.md          # This file
+├── app.py              # Ứng dụng Streamlit chính
+├── requirements.txt    # Các phụ thuộc Python
+└── README.md          # Tệp này
 ```
 
-## 🎯 Learning Objectives
+## 🎯 Mục Tiêu Học Tập
 
-This application demonstrates:
+Ứng dụng này minh họa:
 
-1. **Text Preprocessing**: How to clean and prepare text for analysis
-2. **Tokenization**: Breaking text into meaningful units
-3. **Linguistic Analysis**: Understanding grammatical structure
-4. **Information Extraction**: Identifying key entities in text
-5. **Data Visualization**: Presenting NLP results effectively
-6. **Web Application Development**: Creating interactive NLP tools
+1. **Tiền xử lý văn bản**: Cách làm sạch và chuẩn bị văn bản để phân tích
+2. **Tách từ**: Chia văn bản thành các đơn vị có ý nghĩa
+3. **Phân tích ngôn ngữ**: Hiểu cấu trúc ngữ pháp
+4. **Trích xuất thông tin**: Xác định các thực thể quan trọng trong văn bản
+5. **Trực quan hóa dữ liệu**: Trình bày kết quả NLP hiệu quả
+6. **Phát triển ứng dụng web**: Tạo công cụ NLP tương tác
 
-## 🔮 Future Enhancements
+## 🔮 Cải Tiến Tương Lai
 
-Potential improvements you could add:
+Các cải tiến tiềm năng bạn có thể thêm:
 
-- Support for multiple languages
-- Sentiment analysis
-- Text summarization
-- Dependency parsing visualization
-- Custom entity recognition
-- Export results to CSV/JSON
-- Batch processing of multiple texts
+- Hỗ trợ nhiều ngôn ngữ
+- Phân tích cảm xúc
+- Tóm tắt văn bản
+- Trực quan hóa phân tích cú pháp phụ thuộc
+- Nhận dạng thực thể tùy chỉnh
+- Xuất kết quả ra CSV/JSON
+- Xử lý hàng loạt nhiều văn bản
 
-## 📚 Additional Resources
+## 📚 Tài Liệu Tham Khảo
 
-- [spaCy Documentation](https://spacy.io/usage)
-- [Streamlit Documentation](https://docs.streamlit.io/)
-- [Natural Language Processing with Python](https://www.nltk.org/book/)
+- [Tài liệu spaCy](https://spacy.io/usage)
+- [Tài liệu Streamlit](https://docs.streamlit.io/)
+- [Xử lý Ngôn ngữ Tự nhiên với Python](https://www.nltk.org/book/)
 
-## 🤝 Contributing
+## 🤝 Đóng Góp
 
-Feel free to fork this project and add your own features or improvements!
+Hãy thoải mái fork dự án này và thêm các tính năng hoặc cải tiến của riêng bạn!
 
 ---
 
-**Happy Text Analyzing! 📝✨**
+**Chúc bạn phân tích văn bản vui vẻ! 📝✨**

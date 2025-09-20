@@ -107,6 +107,8 @@ st.markdown("""
         box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         position: relative;
         overflow: hidden;
+        width: 100% !important;
+        min-width: 100% !important;
     }
     
     .stButton > button:hover {
@@ -117,6 +119,21 @@ st.markdown("""
     
     .stButton > button:active {
         transform: translateY(-1px);
+    }
+    
+    /* Sidebar Button Specific Styling */
+    .sidebar .stButton {
+        width: 100% !important;
+    }
+    
+    .sidebar .stButton > div {
+        width: 100% !important;
+    }
+    
+    .sidebar .stButton > div > button {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
     }
     
     /* Tabs Styling */
@@ -431,8 +448,24 @@ def main():
         st.stop()
     
     # Sidebar for input
-    st.sidebar.markdown('<div class="sidebar-section">', unsafe_allow_html=True)
-    st.sidebar.header("📖 Nhập Văn Bản")
+    # st.sidebar.markdown('<div class="sidebar-section">', unsafe_allow_html=True)
+    
+    # Enhanced header with larger text and styling
+    st.sidebar.markdown("""
+    <div style="text-align: center; margin-bottom: 2rem; padding: 1.5rem; 
+                background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); 
+                border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+                border: 2px solid #667eea;">
+        <h1 style="color: #667eea; font-size: 2rem; font-weight: 700; margin: 0; 
+                   text-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);">
+            📖 Nhập Văn Bản
+        </h1>
+        <p style="color: #64748b; font-size: 1rem; margin: 0.5rem 0 0 0; 
+                  font-weight: 500;">
+            Bắt đầu phân tích văn bản của bạn
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
     
     # Sample text option
     sample_texts = {
@@ -653,6 +686,49 @@ def main():
         </ol>
     </div>
     """, unsafe_allow_html=True)
+    
+    # Tips and Tricks
+    st.sidebar.markdown("### 💡 Mẹo Sử Dụng")
+    st.sidebar.markdown("""
+    <div style="background: linear-gradient(135deg, #fef3c7 0%, #fef7cd 100%); 
+                padding: 1rem; border-radius: 10px; margin: 1rem 0; border-left: 4px solid #f59e0b;">
+        <h4 style="color: #92400e; margin-top: 0; font-size: 1rem;">✨ Mẹo hay:</h4>
+        <p style="color: #451a03; margin: 0.3rem 0; font-size: 0.85rem;">
+            • Sử dụng văn bản mẫu để thử nghiệm
+        </p>
+        <p style="color: #451a03; margin: 0.3rem 0; font-size: 0.85rem;">
+            • Văn bản dài cho kết quả chi tiết hơn
+        </p>
+        <p style="color: #451a03; margin: 0.3rem 0; font-size: 0.85rem;">
+            • Hover vào thực thể để xem thông tin
+        </p>
+        <p style="color: #451a03; margin: 0.3rem 0; font-size: 0.85rem;">
+            • Xem biểu đồ để hiểu phân bố
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Technology Info
+    st.sidebar.markdown("### 🛠️ Công Nghệ")
+    st.sidebar.markdown("""
+    <div style="background: linear-gradient(135deg, #f3e8ff 0%, #faf5ff 100%); 
+                padding: 1rem; border-radius: 10px; margin: 1rem 0; border-left: 4px solid #8b5cf6;">
+        <h4 style="color: #6b21a8; margin-top: 0; font-size: 1rem;">⚡ Powered by:</h4>
+        <p style="color: #581c87; margin: 0.3rem 0; font-size: 0.85rem;">
+            <strong>spaCy</strong> - NLP Engine
+        </p>
+        <p style="color: #581c87; margin: 0.3rem 0; font-size: 0.85rem;">
+            <strong>Streamlit</strong> - Web Framework
+        </p>
+        <p style="color: #581c87; margin: 0.3rem 0; font-size: 0.85rem;">
+            <strong>Plotly</strong> - Visualizations
+        </p>
+        <p style="color: #581c87; margin: 0.3rem 0; font-size: 0.85rem;">
+            <strong>Pandas</strong> - Data Processing
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
     st.sidebar.markdown('</div>', unsafe_allow_html=True)
     
     # Enhanced Footer
