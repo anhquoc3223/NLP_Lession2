@@ -40,13 +40,26 @@ st.markdown("""
         font-size: 3.5rem;
         font-weight: 700;
         text-align: center;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: #667eea;
         margin-bottom: 1rem;
-        text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);
         animation: fadeInUp 1s ease-out;
+        position: relative;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+    }
+    
+    .main-header::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        border-radius: 2px;
+        opacity: 0.8;
     }
     
     @keyframes fadeInUp {
@@ -64,11 +77,13 @@ st.markdown("""
     .sub-header {
         font-family: 'Inter', sans-serif;
         font-size: 1.3rem;
-        font-weight: 400;
+        font-weight: 500;
         text-align: center;
-        color: #64748b;
+        color: #475569;
         margin-bottom: 3rem;
         animation: fadeInUp 1s ease-out 0.2s both;
+        line-height: 1.4;
+        letter-spacing: 0.01em;
     }
     
     /* Sidebar Styling */
@@ -138,28 +153,41 @@ st.markdown("""
     
     /* Tabs Styling */
     .stTabs [data-baseweb="tab-list"] {
-        gap: 5px;
+        gap: 8px;
         background: #f8fafc;
-        padding: 5px;
+        padding: 8px;
         border-radius: 15px;
         box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: space-between;
     }
     
     .stTabs [data-baseweb="tab"] {
-        height: 60px;
-        white-space: pre-wrap;
+        height: 70px;
+        white-space: nowrap;
         background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
         border-radius: 12px;
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 1.1rem;
         transition: all 0.3s ease;
         border: 2px solid transparent;
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 8px;
+        color: #475569;
     }
     
     .stTabs [data-baseweb="tab"]:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        color: #667eea !important;
+        border: 2px solid #667eea;
     }
     
     .stTabs [aria-selected="true"] {
@@ -167,6 +195,31 @@ st.markdown("""
         color: white;
         border: 2px solid #5a67d8;
         box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        transform: translateY(-1px);
+    }
+    
+    /* Responsive tab text */
+    @media (max-width: 1200px) {
+        .stTabs [data-baseweb="tab"] {
+            font-size: 1rem;
+            height: 65px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .stTabs [data-baseweb="tab"] {
+            font-size: 0.9rem;
+            height: 60px;
+            padding: 0 4px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .stTabs [data-baseweb="tab"] {
+            font-size: 0.8rem;
+            height: 55px;
+            padding: 0 2px;
+        }
     }
     
     /* Metric Cards */
